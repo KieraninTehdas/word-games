@@ -1,0 +1,36 @@
+.concealed-card {
+  background-color: rgba(195, 174, 243, 0.959);
+  flex-grow: 1;
+  padding: 35px 60px;
+  margin: 4px;
+}
+
+.revealed-card {
+  background-color: rgba(195, 174, 243, 0.959);
+  flex-grow: 1;
+  padding: 35px 60px;
+  margin: 4px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.removed-card {
+  background-color: rgb(255, 255, 255);
+  flex-grow: 1;
+  padding: 35px 60px;
+  margin: 5px;
+  outline: none;
+  border: none;
+}
+
+.game {
+  display: flex;
+}
+
+.game-info {
+  width: 40%;
+}
+
+.game-deck {
+  flex-grow: 1;
+}

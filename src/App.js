@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Game from "./components/pairs-game/pairs";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       </div>
 
       <div className="main">
-        <h2>Some Stuff</h2>
+        <Game></Game>
       </div>
     </div>
   );
