@@ -23,7 +23,7 @@ function RemovedCard() {
 }
 
 function Deck(props) {
-  const cards = props.cards.map((card, i) => {
+  return props.cards.map((card, i) => {
     if (card.isMatched) {
       return <RemovedCard key={i} />;
     } else {
@@ -37,7 +37,6 @@ function Deck(props) {
       );
     }
   });
-  return generateRows(4, cards, "deck-row");
 }
 
 export default class Game extends React.Component {
@@ -113,11 +112,9 @@ export default class Game extends React.Component {
   }
 
   renderMatches() {
-    const cards = this.state.matchedCards.map((card, i) => {
+    return this.state.matchedCards.map((card, i) => {
       return <Card key={i} value={card.value} isRevealed={true} />;
     });
-
-    return generateRows(2, cards, "matched-row");
   }
 
   render() {
@@ -134,9 +131,9 @@ export default class Game extends React.Component {
           <Deck cards={this.state.cards} onClick={(i) => this.handleClick(i)} />
         </div>
         <div className="game-info">
-          <div>Matched Cards:</div>
-          {this.renderMatches()}
-          <div>Attempts: {this.state.nAttempts}</div>
+          <span>Matched Cards:</span>
+          <div>{this.renderMatches()}</div>
+          <span>Attempts: {this.state.nAttempts}</span>
         </div>
       </div>
     );
