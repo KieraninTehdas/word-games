@@ -1,0 +1,36 @@
+.app-container {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.main {
+  order: 1;
+  flex-basis: 80%;
+}
+
+.menu {
+  order: 1;
+  flex-basis: 20%;
+  background-color: #282c34;
+  height: 100vh;
+  color: white;
+
+  > * {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .nav_list {
+    list-style: none;
+
+    .nav_list_item {
+      padding: 12px 0px;
+    }
+  }
+
+  .nav_list_item:first-child {
+    padding-top: 24px;
+    padding-bottom: 12px;
+  }
+}
