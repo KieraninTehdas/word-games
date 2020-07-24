@@ -129,6 +129,7 @@ export default class Game extends React.Component {
 
     return (
       <div className="game">
+        <h2 className="game-title">Pairs</h2>
         <div className="game-deck">
           <Deck cards={this.state.cards} onClick={(i) => this.handleClick(i)} />
         </div>
@@ -142,6 +143,7 @@ export default class Game extends React.Component {
   }
 }
 
+// TODO: Just use flex instead!
 function generateRows(nColumns, contents, divClassName) {
   const nFullRows = Math.floor(contents.length / nColumns);
   const rows = [];

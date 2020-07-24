@@ -1,3 +1,5 @@
+/* TODO: Have a base card class and apply modifications */
+
 .concealed-card {
   background-color: rgba(195, 174, 243, 0.959);
   flex-grow: 1;
@@ -25,12 +27,20 @@
 
 .game {
   display: flex;
+  flex-direction: column;
+}
+
+.game-title {
+  order: 0;
 }
 
 .game-info {
-  width: 40%;
+  order: 2;
+  margin: 48px;
 }
 
 .game-deck {
   flex-grow: 1;
+  order: 1;
+  margin: 48px;
 }
