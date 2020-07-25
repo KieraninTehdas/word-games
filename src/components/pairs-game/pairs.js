@@ -5,21 +5,17 @@ import "./pairs.scss";
 function Card(props) {
   if (props.isRevealed) {
     return (
-      <button className="revealed-card" onClick={props.onClick}>
-        {props.value}
+      <button className="card" onClick={props.onClick}>
+        <span className="card_content">{props.value}</span>
       </button>
     );
   } else {
-    return (
-      <button className="concealed-card" onClick={props.onClick}>
-        {null}
-      </button>
-    );
+    return <button className="card" onClick={props.onClick}></button>;
   }
 }
 
 function RemovedCard() {
-  return <button className="removed-card"></button>;
+  return <button className="card card--removed"></button>;
 }
 
 function Deck(props) {
@@ -47,6 +43,10 @@ export default class Game extends React.Component {
       { word: "to go", key: 0 },
       { word: "olla", key: 1 },
       { word: "to be", key: 1 },
+      { word: "never going to give you up", key: 2 },
+      { word: "never going to let you down", key: 2 },
+      { word: "t3", key: 3 },
+      { word: "v3", key: 3 },
     ];
     this.state = {
       cards: Object.values(this.pairs)
@@ -130,6 +130,7 @@ export default class Game extends React.Component {
         <div className="game-deck">
           <Deck cards={this.state.cards} onClick={(i) => this.handleClick(i)} />
         </div>
+        {/* TODO: Make removed cards just two cards per row */}
         <div className="game-info">
           <span>Matched Cards:</span>
           <div>{this.renderMatches()}</div>

@@ -1,26 +1,31 @@
 /* TODO: Have a base card class and apply modifications */
 
-.concealed-card {
+.card {
+  position: relative;
   background-color: rgba(195, 174, 243, 0.959);
-  flex-grow: 1;
-  padding: 35px 60px;
-  margin: 4px;
-}
-
-.revealed-card {
-  background-color: rgba(195, 174, 243, 0.959);
-  flex-grow: 1;
-  padding: 35px 60px;
   margin: 4px;
   font-family: sans-serif;
   font-weight: bold;
+  border-radius: 10%;
+  width: 20%;
+  padding: 0;
+
+  .card_content {
+    position: absolute;
+    display: block;
+    width: 100%;
+    padding-top: 40%;
+  }
 }
 
-.removed-card {
+.card::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.card--removed {
   background-color: rgb(255, 255, 255);
-  flex-grow: 1;
-  padding: 35px 60px;
-  margin: 5px;
   outline: none;
   border: none;
 }
@@ -40,7 +45,11 @@
 }
 
 .game-deck {
-  flex-grow: 1;
   order: 1;
   margin: 48px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
