@@ -1,61 +1,33 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./app.scss";
+import Nav from "./components/nav/nav";
 import Game from "./components/pairs-game/pairs";
 
 function App() {
   return (
-    <Router>
-      <div className="app-container">
-        <div className="menu">
-          <header>
-            <h1>Word Games!</h1>
-          </header>
-
-          <ul className="nav_list">
-            <li className="nav_list_item">
-              <Link
-                to="/pairs"
-                style={{ textDecoration: "None", color: "inherit" }}
-              >
-                Pairs
-              </Link>
-            </li>
-            <li className="nav_list_item">
-              <Link
-                to="/find-the-word"
-                style={{ textDecoration: "None", color: "inherit" }}
-              >
-                Find The Word
-              </Link>
-            </li>
-            <li className="nav_list_item">
-              <Link
-                to="/my-words"
-                style={{ textDecoration: "None", color: "inherit" }} // TODO: Make this not inline...
-              >
-                My Words
-              </Link>
-            </li>
-          </ul>
-        </div>
+    <div className="app-container">
+      <Router>
+        <Nav />
 
         <div className="main">
           <Switch>
-            <Route path="/pairs">
-              <Game />
-            </Route>
-            <Route path="/find-the-word">
-              <h2>Find The Word</h2>
-            </Route>
-            <Route path="/my-words">
-              <h2>My Words</h2>
-            </Route>
+            <Route path="/pairs" component={Game} />
+            <Route path="/find-the-word" component={Find} />
+            <Route path="/my-words" component={MyWords} />
           </Switch>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
+}
+
+function Find() {
+  return <h2>Find The Word</h2>;
+}
+
+function MyWords() {
+  return <h2>My Words</h2>;
 }
 
 export default App;
